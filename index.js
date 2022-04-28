@@ -7,13 +7,12 @@ const app = express();
 //middleware 
 app.use(express.json());
 app.use(cors());
+const PORT = process.env.PORT || 3000;
 
 //mongodb connection
 mongoose.connect("mongodb+srv://ATJ:Atj@cluster0.onn2g.mongodb.net/moviesDB?retryWrites=true&w=majority",{
     useNewUrlParser: true,
-    useFindAndModify: true,
-    useUnifiedTopology:true,
-    useCreateIndex:true
+    useUnifiedTopology:true
 
 })
 .then(()=>{
@@ -227,6 +226,6 @@ app.put("/actors/:id",(req,res)=>{
     })
 })
 
-app.listen(8000,()=>{
+app.listen(PORT,()=>{
     console.log("Server started");
 });
