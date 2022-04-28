@@ -227,6 +227,6 @@ app.put("/actors/:id",(req,res)=>{
     })
 })
 
-app.listen(process.env.PORT,()=>{
+app.listen(8000,()=>{
     console.log("Server started");
 });
